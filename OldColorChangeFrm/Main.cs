@@ -39,7 +39,7 @@ namespace OldColorChangeFrm
                 load.StartPosition = FormStartPosition.CenterScreen;
                 load.ShowDialog();
 
-                if(!task.ResultMark) throw new Exception("");
+                if(!task.ResultMark) throw new Exception("运算不成功,请联系管理员");
                 else
                 {
                     var clickMessage = "运算成功,是否进行导出";

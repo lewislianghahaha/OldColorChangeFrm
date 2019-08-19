@@ -99,6 +99,9 @@ namespace OldColorChangeFrm.Logic
                             case 16:
                                 row.CreateCell(j).SetCellValue("旧系统配方号");
                                 break;
+                            case 17:
+                                row.CreateCell(j).SetCellValue("色板来源");
+                                break;
                                 #endregion
                         }
                     }

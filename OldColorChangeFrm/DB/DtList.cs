@@ -16,7 +16,7 @@ namespace OldColorChangeFrm.DB
         public DataTable Get_ExportDt()
         {
             var dt = new DataTable();
-            for (var i = 0; i < 17; i++)
+            for (var i = 0; i < 18; i++)
             {
                 var dc = new DataColumn();
                 switch (i)
@@ -87,6 +87,10 @@ namespace OldColorChangeFrm.DB
                         break;
                     case 16:
                         dc.ColumnName = "旧系统配方号";
+                        dc.DataType = Type.GetType("System.String");
+                        break;
+                    case 17:
+                        dc.ColumnName = "色板来源";
                         dc.DataType = Type.GetType("System.String");
                         break;
                 }

@@ -58,6 +58,7 @@ namespace OldColorChangeFrm.Logic
                         newrows[14] =DBNull.Value;                               //累积量
                         newrows[15] = i == 0 ? rowsdtl[i][11] : DBNull.Value;    //制作人
                         newrows[16] = i == 0 ? rowsdtl[i][0] : DBNull.Value;     //旧系统配方号
+                        newrows[17] = i == 0 ? rowsdtl[i][9] : DBNull.Value;     //色板来源
 
                         //对‘涂层’及‘层’根据指定条件进行修改赋值
                         switch (Convert.ToString(newrows[2]))
