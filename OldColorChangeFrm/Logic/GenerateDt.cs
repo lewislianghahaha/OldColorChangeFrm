@@ -46,7 +46,7 @@ namespace OldColorChangeFrm.Logic
                         newrows[2] = i == 0 ? rowsdtl[i][7] : DBNull.Value;      //涂层
                         newrows[3] = i == 0 ? rowsdtl[i][3] : DBNull.Value;      //颜色描述
                         newrows[4] = "";                                         //内部色号
-                        newrows[5] = "";                                         //主配方色号(差异色)
+                        newrows[5] = i == 0 ? rowsdtl[i][6] : DBNull.Value;      //主配方色号(差异色)
                         newrows[6] = "";                                         //颜色组别
                         newrows[7] = i == 0 ? rowsdtl[i][2] : DBNull.Value;      //标准色号
                         newrows[8] = i == 0 ? "#9e5014" : "";                    //RGBValue

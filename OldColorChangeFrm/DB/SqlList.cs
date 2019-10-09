@@ -26,7 +26,7 @@ namespace OldColorChangeFrm.DB
                             INNER JOIN dbo.ColorSchemeDetail e ON a.fid=e.fcolorSchemeId
                             INNER JOIN dbo.Color f ON e.fcolorId=f.fid
 
-                            WHERE d.fname='施莱威'--a.fformulacode='034215'
+                            WHERE d.fname='施莱威' --'金易达3系' --a.fformulacode='034215'
                             ORDER BY b.fcolorid,a.fformulacode 
                         ";
             return _result;

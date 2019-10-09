@@ -17,7 +17,6 @@ namespace OldColorChangeFrm.Logic
         /// </summary>
         /// <param name="fileAddress">导出地址</param>
         /// <param name="tempdt">运算结果-表头</param>
-        /// <param name="tempdtldt">运算结果-表体</param>
         public bool ExportDtToExcel(string fileAddress, DataTable tempdt/*, DataTable tempdtldt*/)
         {
             var result = true;
