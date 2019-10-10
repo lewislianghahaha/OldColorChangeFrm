@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Threading;
 using System.Windows.Forms;
 using Mergedt;
@@ -15,12 +16,35 @@ namespace OldColorChangeFrm
         {
             InitializeComponent();
             OnRegisterEvents();
+            OnShow();
         }
 
         private void OnRegisterEvents()
         {
             tmclose.Click += Tmclose_Click;
             btngen.Click += Btngen_Click;
+            comlist.SelectedIndexChanged += Comlist_SelectedIndexChanged;
+        }
+
+        private void OnShow()
+        {
+            //初始化下拉列表
+            OnShowStatusList();
+        }
+
+        private void Comlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //获取下拉列表所选值
+                var dvordertylelist = (DataRowView)comlist.Items[comlist.SelectedIndex];
+                var typeId = Convert.ToInt32(dvordertylelist["Id"]);
+                GlobalClasscs.ChooseType.ChooseTypeId = typeId;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -109,6 +133,53 @@ namespace OldColorChangeFrm
             {
                 MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// 初始化单据状态下拉列表
+        /// </summary>
+        private void OnShowStatusList()
+        {
+            var dt = new DataTable();
+
+            //创建表头
+            for (var i = 0; i < 2; i++)
+            {
+                var dc = new DataColumn();
+                switch (i)
+                {
+                    case 0:
+                        dc.ColumnName = "Id";
+                        break;
+                    case 1:
+                        dc.ColumnName = "Name";
+                        break;
+                }
+                dt.Columns.Add(dc);
+            }
+
+            //创建行内容
+            for (var j = 0; j < 2; j++)
+            {
+                var dr = dt.NewRow();
+
+                switch (j)
+                {
+                    case 0:
+                        dr[0] = "0";
+                        dr[1] = "以横向方式导出";
+                        break;
+                    case 1:
+                        dr[0] = "1";
+                        dr[1] = "以竖向方式导出";
+                        break;
+                }
+                dt.Rows.Add(dr);
+            }
+
+            comlist.DataSource = dt;
+            comlist.DisplayMember = "Name"; //设置显示值
+            comlist.ValueMember = "Id";    //设置默认值内码
         }
 
     }

@@ -31,6 +31,7 @@
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.tmclose = new System.Windows.Forms.ToolStripMenuItem();
             this.btngen = new System.Windows.Forms.Button();
+            this.comlist = new System.Windows.Forms.ComboBox();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // 
             // btngen
             // 
-            this.btngen.Location = new System.Drawing.Point(48, 38);
+            this.btngen.Location = new System.Drawing.Point(48, 63);
             this.btngen.Name = "btngen";
             this.btngen.Size = new System.Drawing.Size(175, 23);
             this.btngen.TabIndex = 1;
@@ -61,13 +62,23 @@
             this.btngen.Text = "运算及调出";
             this.btngen.UseVisualStyleBackColor = true;
             // 
+            // comlist
+            // 
+            this.comlist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comlist.FormattingEnabled = true;
+            this.comlist.Location = new System.Drawing.Point(48, 37);
+            this.comlist.Name = "comlist";
+            this.comlist.Size = new System.Drawing.Size(175, 20);
+            this.comlist.TabIndex = 2;
+            // 
             // Main
             // 
             this.AcceptButton = this.btngen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 82);
+            this.ClientSize = new System.Drawing.Size(284, 100);
             this.ControlBox = false;
+            this.Controls.Add(this.comlist);
             this.Controls.Add(this.btngen);
             this.Controls.Add(this.MainMenu);
             this.MainMenuStrip = this.MainMenu;
@@ -85,6 +96,7 @@
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem tmclose;
         private System.Windows.Forms.Button btngen;
+        private System.Windows.Forms.ComboBox comlist;
     }
 }
 
