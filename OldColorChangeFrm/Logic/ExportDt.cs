@@ -215,7 +215,7 @@ namespace OldColorChangeFrm.Logic
                                     row.CreateCell(j).SetCellValue("色母20");
                                     break;
                                 case 54:
-                                    row.CreateCell(j).SetCellValue("色母量21");
+                                    row.CreateCell(j).SetCellValue("色母量20");
                                     break;
                                     #endregion
                             }
